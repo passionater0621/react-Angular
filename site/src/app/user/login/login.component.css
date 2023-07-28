@@ -8,6 +8,7 @@
     max-width: 40em;
     border-radius: 2em;
     backdrop-filter: blur(18px);
+    box-shadow: 1em 1em 1em 1em rgba(0, 0, 0, 0.5);
 }
 
 fieldset {
@@ -22,6 +23,7 @@ h2 {
 form {
     padding-top: 8em;
 }
+
 button {
     margin: 1em;
     padding: 0.5em 1em;

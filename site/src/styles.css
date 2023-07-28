@@ -1,4 +1,3 @@
-
 * {
     padding: 0;
     margin: 0;
@@ -96,18 +95,25 @@ p {
     font-style: italic;
 }
 
-
-
-
-
 body {
-    margin: auto;
-    position: relative;
+    /* margin: auto; */
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?cs=srgb&dl=pexels-the-lazy-artist-gallery-1642125.jpg&fm=jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 button:hover {
     cursor: pointer;
+}
+
+@media (min-width: 500px) {
+    html {
+        font-size: 11px;
+    }
 }
 
 @media (min-width: 800px) {
@@ -127,9 +133,3 @@ button:hover {
         font-size: 18px;
     }
 }
-body {
-    background-image: url('https://trumpwallpapers.com/wp-content/uploads/Real-Estate-Wallpaper-01-1920x1080-1.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }

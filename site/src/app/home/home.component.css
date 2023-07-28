@@ -1,0 +1,97 @@
+.mainDiv {
+display: flex;
+}
+
+h1 {
+  font-size: clamp(3rem, 15vmin, 8rem);
+  font-family: sans-serif;
+  color: hsl(0, 0%, 100%);
+  padding-left: 0.5em;
+  padding-right: 0.7em;
+}
+
+.underlined {
+  position: relative;
+}
+
+.underline-mask:after {
+  content: '';
+  position: absolute;
+  top: 95%;
+  width: 150%;
+  aspect-ratio: 3 / 1;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  border: 6px solid hsl(130, 80%, 50%);
+  /* Use a conic gradient mask to hide and show the bits you want */
+  --spread: 140deg;
+  --start: 290deg;
+  mask: conic-gradient(from var(--start), white 0 var(--spread), transparent var(--spread));
+}
+
+
+.underline-overflow {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: clamp(1rem, 2vmin, 2rem);
+}
+.underline-overflow:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  height: 150%;
+  aspect-ratio: 2.5 / 1;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  border-radius: 50%;
+  border: 6px solid hsl(249, 80%, 50%);
+}
+
+.underline-clip:after {
+  content: '';
+  position: absolute;
+  top: 95%;
+  width: 150%;
+  aspect-ratio: 3 / 1;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  border: 6px solid hsl(0, 80%, 50%);
+  /* Use a clip-path to hide and show the bits you want */
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+}
+
+img {
+    max-height: 20em;
+    margin-top: 8em;
+    /* margin-left: 3em; */
+    margin: 8em 0 0 0;
+    border: 3px solid #fff;
+    border-radius:2em;
+    box-shadow: 1em 1em 1em 1em rgba(233, 233, 233, 0.3);
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    border: 3px solid black;
+    border-radius: 1em;
+    width: 5em;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    margin-top: 1em;
+    font-size: 2em;
+    background-color: rgb(2, 51, 2);
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: green;
+    color: #fff;
+}

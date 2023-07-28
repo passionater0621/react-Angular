@@ -7,13 +7,19 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { UserModule } from './user/user.module';
+import { HomeComponent } from './home/home.component';
+import { CatalogComponent } from './catalog/catalog.component';
+import { PostNewComponent } from './post-new/post-new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    HomeComponent,
+    CatalogComponent,
+    PostNewComponent
   ],
   imports: [
     BrowserModule,

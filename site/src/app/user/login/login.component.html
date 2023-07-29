@@ -1,19 +1,15 @@
 <div class="mainDiv">
-    <!-- <img src="https://trumpwallpapers.com/wp-content/uploads/Real-Estate-Wallpaper-01-1920x1080-1.jpg" alt="">
-   -->
-    <form>
+    <form [formGroup]="form" (submit)="login()">
         <fieldset>
-
-
             <div class="field">
                 <h2>Log In</h2>
                 <h4>Email:</h4>
                 <label for="email"></label>
-                <input type="email" name="email" id="email">
+                <input type="email" formControlName="email" name="email" id="email">
 
                 <h4>Password:</h4>
                 <label for="password"></label>
-                <input type="password" name="password" id="password">
+                <input type="password" formControlName="password" name="password" id="password">
 
                 <button>Login</button>
 

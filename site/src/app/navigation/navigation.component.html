@@ -7,9 +7,12 @@
         </ul>
     </div>
     <div>
-        <ul>
+        <ul *ngIf="!isLoggedIn">
             <li> <a routerLink="/login">Login</a> </li>
             <li> <a routerLink="/register">Register</a></li>
+        </ul>
+        <ul *ngIf="isLoggedIn">
+            <li> <a (click)="logout()">Logout</a> </li>
         </ul>
     </div>
 </nav>

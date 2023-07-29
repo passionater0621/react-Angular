@@ -1,28 +1,25 @@
 <div class="mainDiv">
-
-    <form>
+    <form [formGroup]="form" (submit)="register()">
         <fieldset>
-
-
             <div class="field">
 
                 <h2>Register</h2>
-                <h4>Username:</h4>
-                <label for="username"></label>
-                <input type="username" name="username" id="username">
-
                 <h4>Email:</h4>
                 <label for="email"></label>
-                <input type="email" name="email" id="email">
+                <input type="email" formControlName="email" name="email" id="email">
+
+                <h4>Username:</h4>
+                <label for="username"></label>
+                <input type="username" formControlName="username" name="username" id="username">
 
                 <h4>Password:</h4>
                 <label for="password"></label>
-                <input type="password" name="password" id="password">
+                <input type="password" formControlName="password" name="password" id="password">
 
 
                 <h4>Repeat Password:</h4>
                 <label for="re-password"></label>
-                <input type="password" name="re-password" id="re-password">
+                <input type="password" formControlName="rePass" name="rePass" id="rePass">
                 <button>Login</button>
 
                 <p class="text-center">

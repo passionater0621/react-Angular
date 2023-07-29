@@ -100,14 +100,21 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url('https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?cs=srgb&dl=pexels-the-lazy-artist-gallery-1642125.jpg&fm=jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?cs=srgb&dl=pexels-the-lazy-artist-gallery-1642125.jpg&fm=jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
 }
 
 button:hover {
     cursor: pointer;
+}
+
+
+
+.error {
+    color: rgb(115, 5, 5);
 }
 
 @media (min-width: 500px) {

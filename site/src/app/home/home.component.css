@@ -1,5 +1,5 @@
 .mainDiv {
-display: flex;
+  display: flex;
 }
 
 h1 {
@@ -8,6 +8,8 @@ h1 {
   color: hsl(0, 0%, 100%);
   padding-left: 0.5em;
   padding-right: 0.7em;
+  justify-content: center;
+  align-items: center;
 }
 
 .underlined {
@@ -36,6 +38,7 @@ h1 {
   overflow: hidden;
   padding-bottom: clamp(1rem, 2vmin, 2rem);
 }
+
 .underline-overflow:after {
   content: '';
   position: absolute;
@@ -63,35 +66,69 @@ h1 {
 }
 
 img {
-    max-height: 20em;
-    margin-top: 8em;
-    /* margin-left: 3em; */
-    margin: 8em 0 0 0;
-    border: 3px solid #fff;
-    border-radius:2em;
-    box-shadow: 1em 1em 1em 1em rgba(233, 233, 233, 0.3);
+  max-height: 20em;
+  margin-top: 8em;
+  /* margin-left: 3em; */
+  margin: 8em 0 0 0;
+  border: 3px solid #fff;
+  border-radius: 2em;
+  box-shadow: 1em 1em 1em 1em rgba(233, 233, 233, 0.3);
 }
 
 .right {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
-    border: 3px solid black;
-    border-radius: 1em;
-    width: 5em;
-    margin: 0 auto;
-    text-align: center;
-    justify-content: center;
-    margin-top: 1em;
-    font-size: 2em;
-    background-color: rgb(2, 51, 2);
-    color: #fff;
-    text-decoration: none;
+  border: 3px solid black;
+  border-radius: 1em;
+  width: 5em;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  margin-top: 1em;
+  font-size: 2em;
+  background-color: rgb(2, 51, 2);
+  color: #fff;
+  text-decoration: none;
 }
 
 a:hover {
-    background-color: green;
-    color: #fff;
+  background-color: green;
+  color: #fff;
 }
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 7px;
+  }
+}
+
+/* @media (max-width: 800px) {
+  h1 {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1280px) {
+  h1 {
+    font-size: 14px;
+  }
+}
+*/
+@media (max-width: 1150px) {
+  img {
+    width: 30em;
+  }
+  h1 {
+    font-size: 5em;
+
+  }
+} 

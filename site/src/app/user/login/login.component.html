@@ -3,19 +3,35 @@
         <fieldset>
             <div class="field">
                 <h2>Log In</h2>
+
+                <!-- Email -->
                 <h4>Email:</h4>
                 <label for="email"></label>
                 <input type="email" formControlName="email" name="email" id="email">
 
+                <ng-container *ngIf="form.get('email')?.touched">
+                    <p class="error" *ngIf="form.get('email')?.errors?.['required']">Email is required!</p>
+                    <p class="error" *ngIf="form.get('email')?.errors?.['EmailValidator']">Email is not valid!</p>
+                </ng-container>
+
+
+                <!-- Password -->
                 <h4>Password:</h4>
                 <label for="password"></label>
                 <input type="password" formControlName="password" name="password" id="password">
+
+                <ng-container *ngIf="form.get('password')?.touched">
+                    <p class="error" *ngIf="form.get('password')?.errors?.['required']">Password is
+                        required!</p>
+                    <p class="error" *ngIf="form.get('password')?.errors?.['minlength']">Password must
+                        be at least 6 characters!</p>
+                </ng-container>
 
                 <button>Login</button>
 
                 <p class="text-center">
                     Dont have an account?
-                    <a routerLink="/register">Register</a>
+                    <a class='accBtn' routerLink="/register">Register</a>
                 </p>
 
             </div>

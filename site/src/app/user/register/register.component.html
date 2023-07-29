@@ -8,23 +8,46 @@
                 <label for="email"></label>
                 <input type="email" formControlName="email" name="email" id="email">
 
+                <ng-container *ngIf="form.get('email')?.touched">
+                    <p class="error" *ngIf="form.get('email')?.errors?.['required']">Email is required!</p>
+                    <p class="error" *ngIf="form.get('email')?.errors?.['EmailValidator']">Email is not valid!</p>
+                </ng-container>
+
                 <h4>Username:</h4>
                 <label for="username"></label>
                 <input type="username" formControlName="username" name="username" id="username">
+
+                <ng-container *ngIf="form.get('username')?.touched">
+                    <p class="error" *ngIf="form.get('username')?.errors?.['required']">Username is required!</p>
+                    <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">Username must
+                        be at least 5 characters!</p>
+                </ng-container>
 
                 <h4>Password:</h4>
                 <label for="password"></label>
                 <input type="password" formControlName="password" name="password" id="password">
 
+                <ng-container *ngIf="form.get('password')?.touched">
+                    <p class="error" *ngIf="form.get('password')?.errors?.['required']">Password is required!</p>
+                    <p class="error" *ngIf="form.get('password')?.errors?.['minlength']">Password must
+                        be at least 6 characters!</p>
+                </ng-container>
 
                 <h4>Repeat Password:</h4>
                 <label for="re-password"></label>
                 <input type="password" formControlName="rePass" name="rePass" id="rePass">
-                <button>Login</button>
+
+                <ng-container *ngIf="form.get('rePass')?.touched">
+                    <p class="error" *ngIf="form.get('rePass')?.errors?.['required']">Password is required!</p>
+                    <p class="error" *ngIf="form.get('rePass')?.errors?.['minlength']">Password must
+                        be at least 6 characters!</p>
+                </ng-container>
+
+                <button>Register</button>
 
                 <p class="text-center">
                     Have an account?
-                    <a routerLink="/login">Login</a>
+                    <a class="accBtn" routerLink="/login">Login</a>
                 </p>
 
             </div>

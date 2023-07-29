@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { EmailValidator } from 'src/app/shared/validators/app-email.validator';
+import { DEFAULT_EMAIL_DOMAINS } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +13,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   form = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required]],
+    email: ['', [Validators.required, EmailValidator(DEFAULT_EMAIL_DOMAINS)]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
   });
 
 

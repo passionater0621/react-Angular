@@ -1,3 +1,9 @@
+
+* {
+    font-family: monospace;
+    color: #fff;
+}
+
 .field {
     border: 1px solid #000;
     margin: 0 auto;
@@ -5,10 +11,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 40em;
+    max-width: 35em;
     border-radius: 2em;
     backdrop-filter: blur(18px);
-    box-shadow: 1em 1em 1em 1em rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1em 1em 1em rgba(255, 255, 255, 0.2);
 }
 
 fieldset {
@@ -17,11 +23,11 @@ fieldset {
 
 h2 {
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 form {
-    padding-top: 8em;
+    padding-top: 5em;
 }
 
 button {
@@ -29,6 +35,8 @@ button {
     padding: 0.5em 1em;
     border-radius: 100px;
     border: 2px solid black;
+    color: #000;
+    font-weight: 580;
 }
 
 button:hover {
@@ -43,4 +51,15 @@ p {
 
 a {
     text-decoration: none;
+}
+
+
+h4 {
+    padding: 0.2em;
+    font-size: 1.2em;
+}
+
+input {
+    border-radius: 1em;
+    border: 1px solid black;
 }

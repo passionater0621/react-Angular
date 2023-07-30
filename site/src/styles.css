@@ -111,12 +111,6 @@ button:hover {
     cursor: pointer;
 }
 
-
-
-.error {
-    color: rgb(115, 5, 5);
-}
-
 @media (min-width: 500px) {
     html {
         font-size: 11px;

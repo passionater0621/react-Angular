@@ -32,8 +32,7 @@ export class RegisterComponent {
     const { username, email, password, rePass } = this.form.value
 
     if (password !== rePass) {
-
-      return alert('Password`s dont match!')
+      return alert('Password`s dont match!');
     }
 
     this.userService.register(username!, email!, password!, rePass!).subscribe((response) => {

@@ -68,3 +68,11 @@ input {
     color: #00ff2f;
     text-decoration: underline;
 }
+
+input {
+    color: #000;
+}
+
+.error {
+    color: rgb(179, 4, 4);
+}

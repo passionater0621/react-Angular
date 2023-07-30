@@ -95,7 +95,7 @@ a {
 }
 
 a:hover {
-  background-color: green;
+   background-color: green; 
   color: #fff;
 }
 

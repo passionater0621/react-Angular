@@ -63,3 +63,11 @@ input {
     border-radius: 1em;
     border: 1px solid black;
 }
+
+input {
+    color: #000;
+}
+
+.error {
+    color: rgb(179, 4, 4);
+}

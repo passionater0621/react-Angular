@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserModule } from '../user/user.module';
 import { PostNewComponent } from './post-new/post-new.component';
 import { PropertiesRoutingModule } from './properties.routing';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -22,7 +23,8 @@ import { PropertiesRoutingModule } from './properties.routing';
     ReactiveFormsModule,
     HttpClientModule,
     UserModule,
-    PropertiesRoutingModule
+    PropertiesRoutingModule,
+    SharedModule
   ]
 
 })

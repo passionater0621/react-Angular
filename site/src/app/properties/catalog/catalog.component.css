@@ -1,0 +1,90 @@
+* {
+    font-family: monospace;
+    color: #fff;
+}
+
+.card {
+    border: 1px solid #000;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 3em;
+    border-radius: 12px;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 1em 1em 1em rgba(255, 255, 255, 0.2);
+    max-width: 1100px;
+
+}
+
+
+.card-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3em;
+    padding-top: 0.5em;
+    padding-bottom: 1.5em;
+}
+
+.details-btn {
+    margin: 1em;
+    padding: 0.5em 1em;
+    border-radius: 100px;
+    color: #000;
+    border: 2px solid black;
+    font-weight: 580;
+    background-color: #fff;
+}
+
+.details-btn:hover {
+    background-color: green;
+    border: 2px solid green;
+    color: #fff;
+}
+
+p {
+ margin: 0;
+ padding: 0.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+h4 {
+    padding: 0.2em;
+    font-size: 1.2em;
+}
+
+input {
+    border-radius: 1em;
+    border: 1px solid black;
+}
+
+.accBtn {
+    color: #00ff2f;
+    text-decoration: underline;
+}
+
+input {
+    color: #000;
+}
+
+.error {
+    color: rgb(179, 4, 4);
+}
+
+.appImg {
+    overflow: hidden;
+    display: block;
+    width: 20em;
+    border-radius: 12px 12px 0px 0px;
+    max-height: 13em;
+}
+
+

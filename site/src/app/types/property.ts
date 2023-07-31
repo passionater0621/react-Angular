@@ -1,7 +1,10 @@
 export interface Property {
-    photo: string,
-    address: string,
+    city: string,
     phone: string,
-    area: number,
-    price: number
+    area: string,
+    photo: string,
+    price: string,
+    description: string,
+    id: string | undefined,
+    userId: string | undefined
 }

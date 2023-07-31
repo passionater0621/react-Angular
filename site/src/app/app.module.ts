@@ -9,9 +9,10 @@ import { MainComponent } from './main/main.component';
 import { UserModule } from './user/user.module';
 import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog.component';
-import { PostNewComponent } from './post-new/post-new.component';
+import { PostNewComponent } from './properties/post-new/post-new.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { PropertiesModule } from './properties/properties.module';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,14 @@ import { SharedModule } from './shared/shared.module';
     MainComponent,
     HomeComponent,
     CatalogComponent,
-    PostNewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    PropertiesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

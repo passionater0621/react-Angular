@@ -17,15 +17,17 @@ export class NavigationComponent {
   }
 
   logout(): void {
-    this.userService.logout().subscribe({
-      next: () => {
-        this.router.navigate(['/login'])
+    this.userService.logout()
+    this.router.navigate(['/login'])
+    //.subscribe({
+    //   next: () => {
+    //     this.router.navigate(['/login'])
 
-      },
-      error: () => {
-        this.router.navigate(['/login'])
-      }
-    })
+    //   },
+    //   error: () => {
+    //     this.router.navigate(['/login'])
+    //   }
+    // })
   }
 }
 

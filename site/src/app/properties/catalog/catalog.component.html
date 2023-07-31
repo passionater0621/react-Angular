@@ -1,0 +1,24 @@
+<!-- <div *ngIf="isLoading">
+    <app-loader/>*ngIf="!isLoading"
+</div> -->
+
+<main class="catalog">
+    <section id="catalog">
+        <h2>All apartments</h2>
+        <div class="card-wrapper">
+
+            <div class="card" *ngFor="let property of properties">
+                <img class='appImg' src="{{property.photo}}" />
+                <p><strong>City: </strong><span class="name">{{property.city}}</span></p>
+                <p><strong>Area: </strong><span class="model">{{property.area}}</span></p>
+                <p><strong>Price:</strong><span class="car-type">{{property.price}}</span></p>
+                <a class="details-btn" [routerLink]="property.id">Details</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- NO APARTMENTS -->
+<div id="no-post" *ngIf="properties.length===0">
+    <h1>There are no cars available! :( :( :(</h1>
+</div>

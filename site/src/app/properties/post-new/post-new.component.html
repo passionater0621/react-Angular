@@ -1,0 +1,62 @@
+<div class="mainDiv">
+    <form [formGroup]="form" (submit)="post()">
+        <fieldset>
+            <div class="field">
+                <h2>Sell your property</h2>
+
+                <h4>City:</h4>
+                <label for="city"></label>
+                <input type="city" formControlName="city" name="city" id="city">
+
+                <ng-container *ngIf="form.get('city')?.touched">
+                    <p class="error" *ngIf="form.get('city')?.errors?.['required']">City is required!</p>
+                </ng-container>
+
+                <h4>Phone:</h4>
+                <label for="phone"></label>
+                <input type="phone" formControlName="phone" name="phone" id="phone">
+
+                <ng-container *ngIf="form.get('phone')?.touched">
+                    <p class="error" *ngIf="form.get('phone')?.errors?.['required']">City is required!</p>
+                </ng-container>
+
+                <h4>Area (m2):</h4>
+                <label for="area"></label>
+                <input type="area" formControlName="area" name="area" id="area">
+
+                <ng-container *ngIf="form.get('area')?.touched">
+                    <p class="error" *ngIf="form.get('area')?.errors?.['required']">Area is required!</p>
+                </ng-container>
+
+                <h4>Photo:</h4>
+                <label for="photo"></label>
+                <input type="photo" formControlName="photo" name="photo" id="photo">
+
+                <ng-container *ngIf="form.get('photo')?.touched">
+                    <p class="error" *ngIf="form.get('photo')?.errors?.['required']">Photo is required!</p>
+                </ng-container>
+
+                <h4>Price:</h4>
+                <label for="price"></label>
+                <input type="price" formControlName="price" name="price" id="price">
+
+                <ng-container *ngIf="form.get('price')?.touched">
+                    <p class="error" *ngIf="form.get('price')?.errors?.['required']">Price is required!</p>
+                </ng-container>
+
+                <h4>Description:</h4>
+                <label for="description"></label>
+                <textarea name="description" formControlName="description" id="description" cols="30"
+                    rows="3"></textarea>
+                <ng-container *ngIf="form.get('description')?.touched">
+                    <p class="error" *ngIf="form.get('description')?.errors?.['required']">Description is required!</p>
+                    <p class="error" *ngIf="form.get('description')?.errors?.['minlength']">Description must
+                        be at least 10 characters!</p>
+                </ng-container>
+                <button>Post</button>
+
+
+            </div>
+        </fieldset>
+    </form>
+</div>

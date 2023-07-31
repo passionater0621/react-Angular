@@ -9,7 +9,9 @@
     </h1>
     <div class="right">
          <img src="https://wallpaperaccess.com/full/3921874.jpg">
-    <a routerLink="/post-new">Sell</a> 
+
+    <a  *ngIf='isLoggedIn'  class='logged' routerLink="/post-new">Sell</a> 
+    <a  *ngIf='!isLoggedIn' class='notLogged' routerLink="/login">LogIn to sell</a> 
     </div>
   
 </div>

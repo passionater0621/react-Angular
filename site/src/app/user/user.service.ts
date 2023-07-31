@@ -35,6 +35,8 @@ register(username: string, email: string, password: string, rePass: string) {
 }
 
 login(email: string, password: string) {
+
+  console.log(this.user)
   return this.http
     .post<User>(`${apiUrl}:signInWithPassword?key=${apiKey}`, {
       email, password,
@@ -45,9 +47,7 @@ login(email: string, password: string) {
 
 logout() {
   localStorage.removeItem('user')
-  return this.http
-    .post<User>(`${apiUrl}:signOut?key=${apiKey}`, {})
-    .pipe(tap(() => this.user$$.next(undefined)));
+  return this.user$$.next(undefined);
 }
 
   get isLogged(): boolean {

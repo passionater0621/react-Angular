@@ -70,4 +70,11 @@ input {
 
 .error {
     color: rgb(179, 4, 4);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+textarea {
+    border-radius: 1em;
+    color: #000;
 }

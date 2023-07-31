@@ -12,6 +12,7 @@ import { DEFAULT_EMAIL_DOMAINS } from 'src/app/shared/constants';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  
   form = this.fb.group({
     email: ['', [Validators.required, EmailValidator(DEFAULT_EMAIL_DOMAINS)]],
     password: ['', [Validators.required, Validators.minLength(6)]],
@@ -33,5 +34,6 @@ export class LoginComponent {
       localStorage.setItem('user', JSON.stringify(response));
       this.router.navigate(['/home']);
     })
+    
   }
 }

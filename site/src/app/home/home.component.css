@@ -99,6 +99,11 @@ a:hover {
   color: #fff;
 }
 
+.notLogged {
+font-size: 1.5em;
+width: 8em;
+
+}
 @media (max-width: 500px) {
   h1 {
     font-size: 7px;
@@ -132,3 +137,4 @@ a:hover {
 
   }
 } 
+

@@ -4,57 +4,56 @@ import { BehaviorSubject, Subscription, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../shared/constants';
 
-  const { apiUrl, apiKey } = environment
+const { apiUrl, apiKey } = environment
 @Injectable({
   providedIn: 'root'
 })
 export class UserService implements OnDestroy {
 
 
-
   private user$$ = new BehaviorSubject<User | undefined>(undefined);
   public user$ = this.user$$.asObservable();
 
-user: User | undefined
+  user: User | undefined
+  subscription: Subscription;
 
-subscription: Subscription;
-
-constructor(private http: HttpClient) {
-  this.subscription = this.user$.subscribe(user => {
-    this.user = user;
-  })
-}
-
-register(username: string, email: string, password: string, rePass: string) {
-  return this.http
-    .post<User>(`${apiUrl}:signUp?key=${apiKey}`, {
-      username, email, password, rePass,
-      returnSecureToken: true
+  constructor(private http: HttpClient) {
+    this.subscription = this.user$.subscribe(user => {
+      this.user = user;
     })
-    .pipe(tap((user) => this.user$$.next(user)))
-}
+  }
 
-login(email: string, password: string) {
+  register(username: string, email: string, password: string, rePass: string) {
+    return this.http
+      .post<User>(`${apiUrl}:signUp?key=${apiKey}`, {
+        username, email, password, rePass,
+        returnSecureToken: true
+      })
+      .pipe(tap((user) => this.user$$.next(user)))
+  }
 
-  console.log(this.user)
-  return this.http
-    .post<User>(`${apiUrl}:signInWithPassword?key=${apiKey}`, {
-      email, password,
-      returnSecureToken: true
-    })
-    .pipe(tap((user) => this.user$$.next(user)))
-}
+  login(email: string, password: string) {
+    return this.http
+      .post<User>(`${apiUrl}:signInWithPassword?key=${apiKey}`, {
+        email, password,
+        returnSecureToken: true
+      })
+      .pipe(tap((user) => {
+        this.user$$.next(user)
+        console.log(user)
+      }))
+  }
 
-logout() {
-  localStorage.removeItem('user')
-  return this.user$$.next(undefined);
-}
+  logout() {
+    localStorage.removeItem('user')
+    return this.user$$.next(undefined);
+  }
 
   get isLogged(): boolean {
-  return !!this.user;
-}
+    return !!this.user;
+  }
 
-ngOnDestroy(): void {
-  this.subscription?.unsubscribe()
-}
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe()
+  }
 }

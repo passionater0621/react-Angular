@@ -35,9 +35,14 @@ export class RegisterComponent {
       return alert('Password`s dont match!');
     }
 
-    this.userService.register(username!, email!, password!, rePass!).subscribe((response) => {
-      localStorage.setItem('user', JSON.stringify(response))
-      this.router.navigate(['/home']);
+    this.userService.register(username!, email!, password!, rePass!).subscribe({
+      next: (response) => {
+        localStorage.setItem('user', JSON.stringify(response))
+        this.router.navigate(['/home']);
+      },
+      error: (error) => {
+        return alert(error.error.error.message)
+      }
     })
   }
 }

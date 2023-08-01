@@ -25,7 +25,7 @@
 
     </div>
 
-    <div class="commentDiv">
+    <div *ngIf="isLogged" class="commentDiv">
         <form [formGroup]="form" (submit)="postComment()">
             <h2>Post a comment</h2>
             <div class="poleta">

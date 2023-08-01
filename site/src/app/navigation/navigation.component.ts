@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user/user.service';
 import { Router } from '@angular/router';
 
@@ -19,15 +19,10 @@ export class NavigationComponent {
   logout(): void {
     this.userService.logout()
     this.router.navigate(['/login'])
-    //.subscribe({
-    //   next: () => {
-    //     this.router.navigate(['/login'])
-
-    //   },
-    //   error: () => {
-    //     this.router.navigate(['/login'])
-    //   }
-    // })
   }
+
+  // get username(): string {
+  //   return this.userService.user?.username || '';
+  // }
 }
 

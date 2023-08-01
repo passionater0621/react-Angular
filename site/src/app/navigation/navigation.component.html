@@ -1,9 +1,10 @@
 <nav>
     <div>
         <ul>
-            <li> <a href="/home">Home</a></li>
-            <li> <a href="/catalog">Catalog</a></li>
-            <li> <a href="/contacts">Contacts</a></li>
+            <li><a routerLink="/home"><img src="../../favicon.ico"></a></li>
+            <li> <a routerLink="/home">Home</a></li>
+            <li> <a routerLink="/catalog">Catalog</a></li>
+
         </ul>
     </div>
     <div>
@@ -12,7 +13,10 @@
             <li> <a routerLink="/register">Register</a></li>
         </ul>
         <ul *ngIf="isLoggedIn">
+            <li> <a routerLink="/post-new">Post for sell</a></li>
             <li> <a (click)="logout()">Logout</a> </li>
+
+            <!-- <li><a href="">{{username}}`s profile</a></li> -->
         </ul>
     </div>
 </nav>

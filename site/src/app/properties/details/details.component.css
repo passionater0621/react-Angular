@@ -1,0 +1,124 @@
+* {
+    font-family: monospace;
+    color: #fff;
+}
+
+.field {
+    border: 1px solid #000;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 60em;
+    border-radius: 2em;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 1em 1em 1em rgba(255, 255, 255, 0.2);
+}
+
+.mainDiv {
+    padding-top: 4em;
+}
+
+fieldset {
+    border: none;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3em;
+}
+
+button {
+    margin: 1em;
+    padding: 0.5em 1em;
+    border-radius: 100px;
+    color: #000;
+    border: 2px solid black;
+    font-weight: 580;
+    width: 7em;
+}
+
+button:hover {
+    background-color: green;
+    border: 2px solid green;
+    color: #fff;
+}
+
+p {
+    text-align: center;
+    justify-content: center;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+h4 {
+    padding: 0.2em;
+    font-size: 1.2em;
+}
+
+input {
+    border-radius: 1em;
+    border: 1px solid black;
+}
+
+.accBtn {
+    color: #00ff2f;
+    text-decoration: underline;
+}
+
+input {
+    color: #000;
+}
+
+.error {
+    color: rgb(179, 4, 4);
+}
+
+img {
+    max-width: 20em;
+    margin-left: 7em;
+}
+
+.all {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    margin-left: 4em;
+}
+
+.comment {
+    display: flex;
+    padding: 0.5em;
+}
+
+.commentDiv {
+    border: 1px solid #000;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 60em;
+    border-radius: 2em;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 1em 1em 1em rgba(255, 255, 255, 0.2);
+    margin-bottom: 3em;
+    margin-top: 3em;
+}
+
+.poleta {
+    display: flex;
+}
+
+.postBtn {
+    margin: 0 auto;
+    display: block;
+margin-top: 1em;
+margin-bottom: 1em;
+}

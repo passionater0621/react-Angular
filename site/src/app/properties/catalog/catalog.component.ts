@@ -23,8 +23,5 @@ export class CatalogComponent implements OnInit {
          this.isLoading = false
       }
     })
-
-    console.log(this.properties)
-    console.log(this.ids)
   }
 }

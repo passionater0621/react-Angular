@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PostNewComponent } from './properties/post-new/post-new.component';
+import { ErrorComponent } from './shared/error/error.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'post-new',
     component: PostNewComponent
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
   },
   {
     path: "user",

@@ -1,0 +1,11 @@
+h1 {
+    color: #fff;
+    padding-top: 5em;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto
+}
+
+div {
+    display: flex;
+}

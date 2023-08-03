@@ -21,7 +21,6 @@ export class CatalogComponent implements OnInit {
         this.properties = Object.values(property)
         this.ids = Object.keys(property)
         this.apiService.getArrayValues(this.properties, this.ids)
-
       }
     })
   }

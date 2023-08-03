@@ -67,7 +67,7 @@ export class DetailsComponent implements OnInit {
           this.router.navigate([`catalog/${id}`])
         },
         error: () => {
-          this.router.navigate([`catalog/${id}`])
+          this.router.navigate([`error`])
         }
       }
     )
@@ -86,7 +86,7 @@ export class DetailsComponent implements OnInit {
         this.router.navigate([`catalog`])
       },
       error: () => {
-        this.router.navigate([`catalog`])
+        this.router.navigate([`error`])
       }
     }
     )

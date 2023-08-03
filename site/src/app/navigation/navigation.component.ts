@@ -20,9 +20,5 @@ export class NavigationComponent {
     this.userService.logout()
     this.router.navigate(['/login'])
   }
-
-  // get username(): string {
-  //   return this.userService.user?.username || '';
-  // }
 }
 

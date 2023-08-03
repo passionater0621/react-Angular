@@ -35,8 +35,6 @@ export class PostNewComponent implements OnInit{
 
   post() {
     const { city, phone, area, photo, price, description } = this.form.value;
-    console.log({ city, phone, area, photo, price, description })
-
     this.apiService.postApartment(city!, phone!, area!, photo!, price!, description!, this.userId!)
       .subscribe(
         {
@@ -44,7 +42,7 @@ export class PostNewComponent implements OnInit{
             this.router.navigate(['/catalog'])
           },
           error: () => {
-            this.router.navigate(['/home'])
+            this.router.navigate(['/error'])
           }
         }
       )

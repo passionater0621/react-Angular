@@ -13,6 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import { PropertiesModule } from './properties/properties.module';
 import { AppInterceptorProvider } from './app.interceptor';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { AppInterceptorProvider } from './app.interceptor';
     FooterComponent,
     MainComponent,
     HomeComponent,
+
   ],
   imports: [
     BrowserModule,

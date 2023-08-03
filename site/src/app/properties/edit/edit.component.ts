@@ -37,7 +37,7 @@ export class EditComponent implements OnInit {
         this.router.navigate([`/catalog/${id}`])
       },
       error: () => {
-        this.router.navigate(['/home'])
+        this.router.navigate(['/error'])
       }
     })
   }

@@ -8,6 +8,7 @@ import { UserModule } from '../user/user.module';
 import { PostNewComponent } from './post-new/post-new.component';
 import { PropertiesRoutingModule } from './properties.routing';
 import { SharedModule } from '../shared/shared.module';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     CatalogComponent,
     DetailsComponent,
-    PostNewComponent
+    PostNewComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,

@@ -63,12 +63,32 @@ export class DetailsComponent implements OnInit {
     this.apiService.newComment(id, comment12!, name!).subscribe(
       {
         next: () => {
+
           this.router.navigate([`catalog/${id}`])
         },
         error: () => {
           this.router.navigate([`catalog/${id}`])
         }
       }
+    )
+  }
+
+  goToEdit(): void {
+    const id = this.activatedRoute.snapshot.params['propertyId'];
+    this.router.navigate([`catalog/${id}/edit`])
+  }
+
+  delete1(): void {
+    const id = this.activatedRoute.snapshot.params['propertyId'];
+
+    this.apiService.deleteProperty(id).subscribe({
+      next: () => {
+        this.router.navigate([`catalog`])
+      },
+      error: () => {
+        this.router.navigate([`catalog`])
+      }
+    }
     )
   }
 }

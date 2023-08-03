@@ -9,8 +9,8 @@
     </div>
     <div>
         <ul *ngIf="!isLoggedIn">
-            <li> <a routerLink="/login">Login</a> </li>
-            <li> <a routerLink="/register">Register</a></li>
+            <li> <a routerLink="/user/login">Login</a> </li>
+            <li> <a routerLink="/user/register">Register</a></li>
         </ul>
         <ul *ngIf="isLoggedIn">
             <li> <a routerLink="/post-new">Post for sell</a></li>

@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
-import { UserModule } from './user/user.module';
+//import { UserModule } from './user/user.module';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { PropertiesModule } from './properties/properties.module';
+import { AppInterceptorProvider } from './app.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,12 +24,12 @@ import { PropertiesModule } from './properties/properties.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserModule,
+    // UserModule,
     HttpClientModule,
     SharedModule,
     PropertiesModule
   ],
-  providers: [],
+  providers: [AppInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

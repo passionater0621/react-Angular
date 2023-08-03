@@ -1,10 +1,16 @@
 <div *ngIf="isLoading">
-    <app-loader />*ngIf="!isLoading"
+    <app-loader />
 </div>
 
+<!-- NO APARTMENTS -->
+<div *ngIf="!isLoading">
+    <div class="no-post" *ngIf="properties.length===0">
+        <h1>There are no apartments available!</h1>
+    </div>
+</div>
 <main class="catalog">
     <section id="catalog">
-        <h2>All apartments</h2>
+        <h2 *ngIf="properties.length!==0">All apartments</h2>
         <div class="card-wrapper">
 
             <div class="card" *ngFor="let property of properties">
@@ -17,8 +23,3 @@
         </div>
     </section>
 </main>
-
-<!-- NO APARTMENTS -->
-<div id="no-post" *ngIf="properties.length===0">
-    <h1>There are no cars available! :( :( :(</h1>
-</div>

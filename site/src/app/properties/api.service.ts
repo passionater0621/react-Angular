@@ -46,6 +46,12 @@ export class ApiService {
     );
   }
 
+  deleteProperty(id: string) {
+    return this.http.delete<Property>(
+      `https://real-estate-ee905-default-rtdb.europe-west1.firebasedatabase.app/properties/${id}.json`
+    );
+  }
+
   newComment(id: string, comment: string, name: string) {
     return this.http.post<Comment1[]>(
       `https://real-estate-ee905-default-rtdb.europe-west1.firebasedatabase.app/properties/${id}/comments.json`
@@ -65,5 +71,37 @@ export class ApiService {
       allComments.push(commentar)
     }
     return allComments;
+  }
+
+  editProperty(id: string, city: string, phone: string, area: string, photo: string, price: string, description: string) {
+
+    return this.http.patch<Comment1[]>(
+      `https://real-estate-ee905-default-rtdb.europe-west1.firebasedatabase.app/properties/${id}.json`
+      , {
+        city, phone, area, photo, price, description
+      });
+  }
+
+  check(city: string, phone: string, area: string, photo: string, price: string, description: string) {
+    let data = [];
+    if (city !== '') {
+      data.push(city)
+    }
+    if (phone !== '') {
+      data.push(phone)
+    }
+    if (area !== '') {
+      data.push(area)
+    }
+    if (photo !== '') {
+      data.push(photo)
+    }
+    if (price !== '') {
+      data.push(price)
+    }
+    if (description !== '') {
+      data.push(description)
+    }
+    console.log(data)
   }
 }

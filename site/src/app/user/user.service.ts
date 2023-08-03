@@ -25,7 +25,7 @@ export class UserService implements OnDestroy {
 
   register(username: string, email: string, password: string, rePass: string) {
     return this.http
-      .post<User>(`${apiUrl}:signUp?key=${apiKey}`, {
+      .post<User>(`/api:signUp?key=${apiKey}`, {
         username, email, password, rePass,
         returnSecureToken: true
       })
@@ -34,7 +34,7 @@ export class UserService implements OnDestroy {
 
   login(email: string, password: string) {
     return this.http
-      .post<User>(`${apiUrl}:signInWithPassword?key=${apiKey}`, {
+      .post<User>(`/api:signInWithPassword?key=${apiKey}`, {
         email, password,
         returnSecureToken: true
       })

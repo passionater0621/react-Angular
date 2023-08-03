@@ -17,6 +17,14 @@ const routes: Routes = [
     path: 'post-new',
     component: PostNewComponent
   },
+  {
+    path: "user",
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule)
+  },
+  // {
+  //   path: "catalog",
+  //   loadChildren: () => import('../app/properties/properties.module').then((mod) => mod.PropertiesModule)
+  // }
 ];
 
 @NgModule({

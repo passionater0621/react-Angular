@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
-
-//import { AuthActivate } from '../core/guards/auth.activate';
+import { AuthActivate } from '../gurds/gurds';
 
 const routes: Routes = [
     {
@@ -15,7 +14,7 @@ const routes: Routes = [
     {
         path: 'register',
         component: RegisterComponent,
-        // canActivate: [AuthActivate]
+       // canActivate: [AuthActivate]
     },
     {
         path: 'profile',

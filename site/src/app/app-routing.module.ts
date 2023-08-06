@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PostNewComponent } from './properties/post-new/post-new.component';
 import { ErrorComponent } from './shared/error/error.component';
+import { AuthActivate } from './gurds/gurds';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: 'post-new',
-    component: PostNewComponent
+    component: PostNewComponent,
+    canActivate: [AuthActivate],
   },
   {
     path: 'error',

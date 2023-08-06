@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CatalogComponent } from './catalog/catalog.component';
 import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
+import { AuthActivate } from '../gurds/gurds';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
       },
       {
         path: ':propertyId/edit',
-        component: EditComponent
+        component: EditComponent,
+        canActivate: [AuthActivate]
       }
     ],
   },

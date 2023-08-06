@@ -89,8 +89,8 @@ a {
   justify-content: center;
   margin-top: 1em;
   font-size: 2em;
-  background-color: rgb(2, 51, 2);
-  color: #fff;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
   text-decoration: none;
 }
 
@@ -111,24 +111,6 @@ a:hover {
   }
 }
 
-/* @media (max-width: 800px) {
-  h1 {
-    font-size: 10px;
-  }
-}
-
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 1280px) {
-  h1 {
-    font-size: 14px;
-  }
-}
-*/
 @media (max-width: 1150px) {
   img {
     width: 30em;

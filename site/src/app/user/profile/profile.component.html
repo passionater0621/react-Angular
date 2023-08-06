@@ -2,22 +2,30 @@
     <app-loader />
 </div>
 
+<div class="mainDiv">
+    <div class="field">
+        <h2>Your Profile</h2>
+        <h4>Email: {{user?.email}}</h4>
+        <h4>Number of posts: {{properties.length}}</h4>
+    </div>
+</div>
+
 <!-- NO APARTMENTS -->
 <div *ngIf="!isLoading">
     <div class="no-post" *ngIf="properties.length===0">
-        <h1>There are no apartments available!</h1>
+        <h1>You dont have posts. Post your first apartment from <a class="here" routerLink="/post-new">here</a></h1>
     </div>
 </div>
 <main class="catalog">
     <section id="catalog">
-        <h2 *ngIf="properties.length!==0">All apartments</h2>
+        <h2 *ngIf="properties.length!==0">Your posts</h2>
         <div class="card-wrapper">
             <div class="card" *ngFor="let property of properties">
                 <img class='appImg' src="{{property.photo}}" />
                 <p><strong>City: </strong><span class="name">{{property.city}}</span></p>
                 <p><strong>Area: </strong><span class="model">{{property.area}}</span></p>
                 <p><strong>Price: </strong><span class="car-type">{{property.price}}lv</span></p>
-                <a class="details-btn" [routerLink]="property.id">Details</a>
+                <a class="details-btn" routerLink="/catalog/{{property.id}}">Details</a>
             </div>
         </div>
     </section>

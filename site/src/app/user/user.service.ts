@@ -10,7 +10,6 @@ const { apiUrl, apiKey } = environment
 })
 export class UserService implements OnDestroy {
 
-
   private user$$ = new BehaviorSubject<User | undefined>(undefined);
   public user$ = this.user$$.asObservable();
 
@@ -23,13 +22,17 @@ export class UserService implements OnDestroy {
     })
   }
 
-  register(username: string, email: string, password: string, rePass: string) {
+  get userId(): string {
+    return (this.user!.email).split('@')[0];
+  }
+
+  register(email: string, password: string, rePass: string) {
     return this.http
       .post<User>(`/api:signUp?key=${apiKey}`, {
-        username, email, password, rePass,
+        email, password, rePass,
         returnSecureToken: true
       })
-      .pipe(tap((user) => this.user$$.next(user)))
+      .pipe(tap((user) => this.user$$.next(user)));
   }
 
   login(email: string, password: string) {
@@ -40,7 +43,6 @@ export class UserService implements OnDestroy {
       })
       .pipe(tap((user) => {
         this.user$$.next(user)
-        console.log(user)
       }))
   }
 

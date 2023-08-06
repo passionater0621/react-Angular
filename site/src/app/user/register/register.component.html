@@ -13,16 +13,6 @@
                     <p class="error" *ngIf="form.get('email')?.errors?.['EmailValidator']">Email is not valid!</p>
                 </ng-container>
 
-                <h4>Username:</h4>
-                <label for="username"></label>
-                <input type="username" formControlName="username" name="username" id="username">
-
-                <ng-container *ngIf="form.get('username')?.touched">
-                    <p class="error" *ngIf="form.get('username')?.errors?.['required']">Username is required!</p>
-                    <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">Username must
-                        be at least 5 characters!</p>
-                </ng-container>
-
                 <h4>Password:</h4>
                 <label for="password"></label>
                 <input type="password" formControlName="password" name="password" id="password">

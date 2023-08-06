@@ -21,6 +21,7 @@ export class DetailsComponent implements OnInit {
   property: Property | undefined;
   comments: Comment1[] | undefined;
   commentars: any
+  owner: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -41,15 +42,16 @@ export class DetailsComponent implements OnInit {
 
   getProperty(): void {
     const id = this.activatedRoute.snapshot.params['propertyId'];
-
     this.apiService.getProperty(id).subscribe(property => {
       this.property = property;
+      if (property.userId === (this.userService.user?.email)?.split('@')[0]) {
+        this.owner = true
+      }
     })
   }
 
   getAllComments(): void {
     const id = this.activatedRoute.snapshot.params['propertyId'];
-
     this.apiService.getComments(id).subscribe(comments => {
       this.comments = comments;
       this.commentars = this.apiService.getArrayValuesComments(comments)
@@ -59,12 +61,15 @@ export class DetailsComponent implements OnInit {
   postComment(): void {
     const { comment12, name } = this.form.value;
     const id = this.activatedRoute.snapshot.params['propertyId'];
-    console.log(name, comment12)
     this.apiService.newComment(id, comment12!, name!).subscribe(
       {
         next: () => {
-
+          this.form.setValue({
+            comment12: '',
+            name: ''
+          })
           this.router.navigate([`catalog/${id}`])
+          this.getAllComments()
         },
         error: () => {
           this.router.navigate([`error`])

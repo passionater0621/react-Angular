@@ -4,6 +4,8 @@
             <div class="field">
                 <h2>Edit your property</h2>
 
+                <!-- CITY -->
+
                 <h4>City:</h4>
                 <label for="city"></label>
                 <input type="text" formControlName="city" id="city" value="{{property?.city}}">
@@ -11,6 +13,8 @@
                 <ng-container *ngIf="form.get('city')?.touched">
                     <p class="error" *ngIf="form.get('city')?.errors?.['required']">City is required!</p>
                 </ng-container>
+
+                <!-- PHONE -->
 
                 <h4>Phone:</h4>
                 <label for="phone"></label>
@@ -20,6 +24,8 @@
                     <p class="error" *ngIf="form.get('phone')?.errors?.['required']">City is required!</p>
                 </ng-container>
 
+                <!-- AREA -->
+
                 <h4>Area (m2):</h4>
                 <label for="area"></label>
                 <input type="text" formControlName="area" id="area" value="{{property?.area}}">
@@ -28,13 +34,22 @@
                     <p class="error" *ngIf="form.get('area')?.errors?.['required']">Area is required!</p>
                 </ng-container>
 
+                <!-- PHOTO -->
+
                 <h4>Photo:</h4>
+
+
+
                 <label for="photo"></label>
                 <input type="text" formControlName="photo" id="photo" value="{{property?.photo}}">
+                <img src="{{property?.photo}}" alt="">
+
 
                 <ng-container *ngIf="form.get('photo')?.touched">
                     <p class="error" *ngIf="form.get('photo')?.errors?.['required']">Photo is required!</p>
                 </ng-container>
+
+                <!-- PRICE -->
 
                 <h4>Price:</h4>
                 <label for="price"></label>
@@ -44,18 +59,21 @@
                     <p class="error" *ngIf="form.get('price')?.errors?.['required']">Price is required!</p>
                 </ng-container>
 
+                <!-- DESCRIPTION -->
+
                 <h4>Description:</h4>
                 <label for="description"></label>
                 <textarea formControlName="description" id="description" cols="30" rows="3"
                     value="{{property?.description}}"></textarea>
+
                 <ng-container *ngIf="form.get('description')?.touched">
-                    <p class="error" *ngIf="form.get('description')?.errors?.['required']">Description is required!</p>
+                    <p class="error" *ngIf="form.get('description')?.errors?.['required']">Description is required!
+                    </p>
                     <p class="error" *ngIf="form.get('description')?.errors?.['minlength']">Description must
                         be at least 10 characters!</p>
                 </ng-container>
-                <button>Edit</button>
 
-
+                <button>Save</button>
             </div>
         </fieldset>
     </form>

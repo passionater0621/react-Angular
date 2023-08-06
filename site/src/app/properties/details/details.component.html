@@ -14,13 +14,15 @@
 
                 </div>
             </div>
-
-
             <div class="buttons">
-                <button (click)="goToEdit()">Edit</button>
-                <button (click)="delete1()" >Delete</button>
+                <div *ngIf="isLogged">
+                    <div *ngIf="owner">
+                        <button (click)="goToEdit()">Edit</button>
+                        <button (click)="delete1()">Delete</button>
+                    </div>
+                </div>
+                <button routerLink="/catalog">Back</button>
             </div>
-
         </div>
 
     </div>

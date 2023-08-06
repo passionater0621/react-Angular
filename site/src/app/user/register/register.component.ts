@@ -14,7 +14,6 @@ import { DEFAULT_EMAIL_DOMAINS } from 'src/app/shared/constants';
 })
 export class RegisterComponent {
   form = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [Validators.required, EmailValidator(DEFAULT_EMAIL_DOMAINS)]],
     password: ['', [Validators.required, Validators.minLength(6)]],
     rePass: ['', [Validators.required, Validators.minLength(6)]],
@@ -28,14 +27,13 @@ export class RegisterComponent {
     private userService: UserService
   ) { }
   register() {
-
-    const { username, email, password, rePass } = this.form.value
+    const { email, password, rePass } = this.form.value;
 
     if (password !== rePass) {
       return alert('Password`s dont match!');
     }
 
-    this.userService.register(username!, email!, password!, rePass!).subscribe({
+    this.userService.register(email!, password!, rePass!).subscribe({
       next: (response) => {
         localStorage.setItem('user', JSON.stringify(response))
         this.router.navigate(['/home']);

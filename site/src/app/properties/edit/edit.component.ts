@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Property } from 'src/app/types/property';
-import { createInjectableType } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-edit',
@@ -13,6 +13,13 @@ import { createInjectableType } from '@angular/compiler';
 export class EditComponent implements OnInit {
   property: Property | undefined;
 
+  phoneEdit: boolean = false;
+  cityEdit: boolean = false;
+  areaEdit: boolean = false;
+  descriptionEdit: boolean = false;
+  photoEdit: boolean = false;
+  priceEdit: boolean = false;
+
   form = this.fb.group({
     city: ['', [Validators.required]],
     phone: ['', [Validators.required]],
@@ -21,37 +28,40 @@ export class EditComponent implements OnInit {
     price: ['', [Validators.required]],
     description: ['', [Validators.required, Validators.minLength(10)]]
   });
+
+  ngOnInit(): void {
+    this.getPropertyInfo();
+  }
+
+  id: string = this.activatedRoute.snapshot.params['propertyId'];
+
   constructor(private fb: FormBuilder,
-    private apiServes: ApiService,
+    private apiService: ApiService,
     private activatedRoute: ActivatedRoute,
     private router: Router) { }
 
-
-  edit() {
-    const id = this.activatedRoute.snapshot.params['propertyId'];
-    const { city, phone, area, photo, price, description } = this.form.value;
-    console.log( city, phone, area, photo, price, description)
-
-    this.apiServes.editProperty(id, city!, phone!, area!, photo!, price!, description!).subscribe({
-      next: () => {
-        this.router.navigate([`/catalog/${id}`])
-      },
-      error: () => {
-        this.router.navigate(['/error'])
-      }
-    })
-  }
-
-  ngOnInit(): void {
-    this.getPropertyInfo()
-  }
-
   getPropertyInfo() {
     const id = this.activatedRoute.snapshot.params['propertyId'];
-    this.apiServes.getProperty(id).subscribe(property => {
+    this.apiService.getProperty(id).subscribe(property => {
       this.property = property;
-      console.log(property)
+      this.form.setValue({
+        city: this.property.city,
+        phone: this.property.phone,
+        area: this.property.area,
+        photo: this.property.photo,
+        price: this.property.price,
+        description: this.property.description,
+      })
+
     })
   }
 
+  edit() {
+    console.log(this.form.value)
+    const { city, phone, area, photo, price, description } = this.form.value;
+    this.apiService.editProperty(this.id, city!, phone!, area!, photo!, price!, description!).subscribe({
+      next: () => { this.router.navigate([`/catalog/${this.id}`]) },
+      error: () => { this.router.navigate(['/error']) }
+    })
+  }
 }

@@ -11,16 +11,16 @@ export class CatalogComponent implements OnInit {
 
   properties: Property[] = [];
   ids: string[] = [];
-  isLoading: boolean = true
+  isLoading: boolean = true;
 
   constructor(private apiService: ApiService,) { }
   ngOnInit(): void {
     this.apiService.getAllProperties().subscribe({
-      next: (property) => {
-        this.isLoading = false
-        this.properties = Object.values(property)
-        this.ids = Object.keys(property)
-        this.apiService.getArrayValues(this.properties, this.ids)
+      next: (properties) => {
+        this.isLoading = false;
+        this.properties = Object.values(properties);
+        this.ids = Object.keys(properties);
+        this.apiService.getArrayValues(this.properties, this.ids);
       }
     })
   }

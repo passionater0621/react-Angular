@@ -82,26 +82,4 @@ export class ApiService {
       });
   }
 
-  check(city: string, phone: string, area: string, photo: string, price: string, description: string) {
-    let data = [];
-    if (city !== '') {
-      data.push(city)
-    }
-    if (phone !== '') {
-      data.push(phone)
-    }
-    if (area !== '') {
-      data.push(area)
-    }
-    if (photo !== '') {
-      data.push(photo)
-    }
-    if (price !== '') {
-      data.push(price)
-    }
-    if (description !== '') {
-      data.push(description)
-    }
-    console.log(data)
-  }
 }

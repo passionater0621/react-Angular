@@ -1,24 +1,37 @@
-<div *ngIf="isLoading">
-    <app-loader />
-</div>
+<div class="container">
+    <div *ngIf="isLoading">
+        <app-loader />
+    </div>
 
-<!-- NO APARTMENTS -->
-<div *ngIf="!isLoading">
-    <div class="no-post" *ngIf="properties.length===0">
-        <h1>There are no apartments available!</h1>
+    <main class="catalog">
+        <section id="catalog">
+            <div class="head">
+                <form [formGroup]="form" (submit)="search()">
+                    <div class="search">
+                        <p>Filter by city: </p>
+                        <input formControlName="city" type="text">
+                        <button>Search</button>
+                    </div>
+                </form>
+
+                <h2 *ngIf="properties.length!==0">All apartments</h2>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="card" *ngFor="let property of properties">
+                    <img class='appImg' src="{{property.photo}}" />
+                    <p><strong>City: </strong><span class="name">{{property.city}}</span></p>
+                    <p><strong>Area: </strong><span class="model">{{property.area}}</span></p>
+                    <p><strong>Price: </strong><span class="car-type">{{property.price}}lv</span></p>
+                    <a class="details-btn" [routerLink]="property.id">Details</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- NO APARTMENTS -->
+    <div *ngIf="!isLoading">
+        <div class="no-post" *ngIf="properties.length===0">
+            <h1>There are no apartments available!</h1>
+        </div>
     </div>
 </div>
-<main class="catalog">
-    <section id="catalog">
-        <h2 *ngIf="properties.length!==0">All apartments</h2>
-        <div class="card-wrapper">
-            <div class="card" *ngFor="let property of properties">
-                <img class='appImg' src="{{property.photo}}" />
-                <p><strong>City: </strong><span class="name">{{property.city}}</span></p>
-                <p><strong>Area: </strong><span class="model">{{property.area}}</span></p>
-                <p><strong>Price: </strong><span class="car-type">{{property.price}}lv</span></p>
-                <a class="details-btn" [routerLink]="property.id">Details</a>
-            </div>
-        </div>
-    </section>
-</main>

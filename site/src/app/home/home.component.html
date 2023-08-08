@@ -1,5 +1,4 @@
 <div class="mainDiv">
-
     <h1>
         <span class="underlined underline-clip">Sell</span>
         <br>or
@@ -8,10 +7,8 @@
         <span class="underlined underline-overflow">a property</span>
     </h1>
     <div class="right">
-         <img src="https://wallpaperaccess.com/full/3921874.jpg">
-
-    <a  *ngIf='isLoggedIn'  class='logged' routerLink="/post-new">Sell</a> 
-    <a  *ngIf='!isLoggedIn' class='notLogged' routerLink="/login">LogIn to sell</a> 
+        <img src="https://wallpaperaccess.com/full/3921874.jpg">
+        <a *ngIf='isLoggedIn' class='logged' routerLink="/post-new">Sell</a>
+        <a *ngIf='!isLoggedIn' class='notLogged' routerLink="/login">LogIn to sell</a>
     </div>
-  
 </div>

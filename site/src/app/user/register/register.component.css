@@ -1,4 +1,3 @@
-
 * {
     font-family: monospace;
     color: #fff;
@@ -75,4 +74,8 @@ input {
 
 .error {
     color: rgb(179, 4, 4);
+}
+
+.mainDiv {
+    margin-top: 6em;
 }

@@ -15,9 +15,7 @@ export class AuthenticatedComponent {
     } else {
       this.isAuthenticated = false
     }
-   
   }
-
   ngOnInit(): void { }
 
 }

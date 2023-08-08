@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { PropertiesModule } from './properties/properties.module';
 import { AppInterceptorProvider } from './app.interceptor';
+import { AuthenticatedComponent } from './authenticated/authenticated.component';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { AppInterceptorProvider } from './app.interceptor';
     FooterComponent,
     MainComponent,
     HomeComponent,
-
+    AuthenticatedComponent,
   ],
   imports: [
     BrowserModule,

@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
         this.isLoading = false;
         this.properties = Object.values(properties).filter(property => property.userId === this.userService.userId)
         this.ids = Object.keys(properties);
-         this.apiService.getArrayValues(this.properties, this.ids);
+        this.apiService.getArrayValues(this.properties, this.ids);
       }
     })
     this.user = this.userService.user;

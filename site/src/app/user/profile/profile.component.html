@@ -2,7 +2,7 @@
     <app-loader />
 </div>
 
-<div class="mainDiv">
+<div class="mainDiv" *ngIf="!isLoading">
     <div class="field">
         <h2>Your Profile</h2>
         <h4>Email: {{user?.email}}</h4>

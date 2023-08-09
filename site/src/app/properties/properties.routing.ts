@@ -4,6 +4,8 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
 import { AuthActivate } from '../gurds/gurds';
+import { ErrorComponent } from '../shared/error/error.component';
+import { isOwner } from '../gurds/isOwner';
 
 const routes: Routes = [
   {
@@ -21,8 +23,12 @@ const routes: Routes = [
       {
         path: ':propertyId/edit',
         component: EditComponent,
-        canActivate: [AuthActivate]
-      }
+        canActivate: [AuthActivate, isOwner]
+      },
+      {
+        path: '**',
+        component: ErrorComponent
+      },
     ],
   },
 ];
@@ -31,4 +37,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PropertiesRoutingModule {}
+export class PropertiesRoutingModule { }

@@ -3,7 +3,7 @@
         <app-loader />
     </div>
 
-    <main class="catalog">
+    <main class="catalog" *ngIf="!isLoading">
         <section id="catalog">
             <div class="head">
                 <form [formGroup]="form" (submit)="search()">

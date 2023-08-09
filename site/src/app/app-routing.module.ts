@@ -21,17 +21,17 @@ const routes: Routes = [
     canActivate: [AuthActivate],
   },
   {
+    path: "user",
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule)
+  },
+  {
     path: 'error',
     component: ErrorComponent
   },
   {
-    path: "user",
-    loadChildren: () => import('./user/user.module').then((m) => m.UserModule)
+    path: '**',
+    component: ErrorComponent
   },
-  // {
-  //   path: "catalog",
-  //   loadChildren: () => import('../app/properties/properties.module').then((mod) => mod.PropertiesModule)
-  // }
 ];
 
 @NgModule({

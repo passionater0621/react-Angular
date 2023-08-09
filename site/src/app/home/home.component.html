@@ -1,4 +1,8 @@
-<div class="mainDiv">
+<div *ngIf="isLoading">
+    <app-loader />
+</div>
+
+<div class="mainDiv" *ngIf="!isLoading">
     <h1>
         <span class="underlined underline-clip">Sell</span>
         <br>or
@@ -9,6 +13,6 @@
     <div class="right">
         <img src="https://wallpaperaccess.com/full/3921874.jpg">
         <a *ngIf='isLoggedIn' class='logged' routerLink="/post-new">Sell</a>
-        <a *ngIf='!isLoggedIn' class='notLogged' routerLink="/login">LogIn to sell</a>
+        <a *ngIf='!isLoggedIn' class='notLogged' routerLink="/login">Login to sell</a>
     </div>
 </div>

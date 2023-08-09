@@ -10,7 +10,7 @@ import { UserService } from 'src/app/user/user.service';
   templateUrl: './post-new.component.html',
   styleUrls: ['./post-new.component.css']
 })
-export class PostNewComponent implements OnInit{
+export class PostNewComponent implements OnInit {
   userId: string | undefined = ''
 
   form = this.fb.group({
@@ -35,6 +35,9 @@ export class PostNewComponent implements OnInit{
 
   post() {
     const { city, phone, area, photo, price, description } = this.form.value;
+    if (city == '' || phone == '' || area == '' || photo == '' || price == '' || description == '') {
+      return alert('All fields are required')
+    }
     this.apiService.postApartment(city!, phone!, area!, photo!, price!, description!, this.userId!)
       .subscribe(
         {

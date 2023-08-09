@@ -26,11 +26,10 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    // UserModule,
     HttpClientModule,
     SharedModule,
-    PropertiesModule
+    PropertiesModule,
+    AppRoutingModule,
   ],
   providers: [AppInterceptorProvider],
   bootstrap: [AppComponent]

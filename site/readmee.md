@@ -6,6 +6,7 @@
    * Node.js
    * Express.js
    * Firebase 
+   * User data - stored in localStorage
 
 3. FRONT-END
    * Angular

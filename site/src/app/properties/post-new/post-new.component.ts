@@ -38,6 +38,9 @@ export class PostNewComponent implements OnInit {
     if (city == '' || phone == '' || area == '' || photo == '' || price == '' || description == '') {
       return alert('All fields are required')
     }
+    if (description!.length < 10) {
+      return alert('Description must be at least 10 characters!')
+    }
     this.apiService.postApartment(city!, phone!, area!, photo!, price!, description!, this.userId!)
       .subscribe(
         {

@@ -59,6 +59,12 @@ export class EditComponent implements OnInit {
   edit() {
     console.log(this.form.value)
     const { city, phone, area, photo, price, description } = this.form.value;
+    if (city == '' || phone == '' || area == '' || photo == '' || price == '' || description == '') {
+      return alert('All fields are required')
+    }
+    if (description!.length < 10) {
+      return alert('Description must be at least 10 characters!')
+    }
     this.apiService.editProperty(this.id, city!, phone!, area!, photo!, price!, description!).subscribe({
       next: () => { this.router.navigate([`/catalog/${this.id}`]) },
       error: () => { this.router.navigate(['/error']) }
